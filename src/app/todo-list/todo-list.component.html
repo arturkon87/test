@@ -16,8 +16,11 @@
         type="checkbox"
         class="form-check-input my-1"
         [checked]="todo.isComplete"
+        (change)="changeTodoStatus(todo)"
       />
       <span class="todo-item">{{ i + 1 }}. {{ todo.name }}</span>
     </li>
   </ul>
+  <h5 *ngIf="todos.length === 0">No tasks</h5>
+  <!-- <ng-template #noTask>No tasks</ng-template> -->
 </div>

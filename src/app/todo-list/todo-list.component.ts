@@ -8,6 +8,10 @@ import { Todo } from "../shared/interfaces/todo.interface";
   styleUrl: "./todo-list.component.css",
 })
 export class TodoListComponent {
+  changeTodoStatus(todo: Todo) {
+    todo.isComplete = !todo.isComplete;
+    console.log(this.todos);
+  }
   todos: Todo[] = [];
   addTodo(todo: string): void {
     if (todo.length <= 3) {
