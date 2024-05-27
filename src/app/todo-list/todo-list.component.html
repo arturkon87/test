@@ -1,0 +1,23 @@
+<p class="mt-4">Add new task:</p>
+<input type="text" #name class="form-control" name="todo" />
+<button
+  type="button"
+  class="btn btn-primary mt-3"
+  (click)="addTodo(name.value)"
+>
+  Add Task
+</button>
+
+<div class="mt-5">
+  <h4>Tasks:</h4>
+  <ul class="list-group todos-list" *ngIf="todos.length > 0">
+    <li class="list-group-item" *ngFor="let todo of todos; index as i">
+      <input
+        type="checkbox"
+        class="form-check-input my-1"
+        [checked]="todo.isComplete"
+      />
+      <span class="todo-item">{{ i + 1 }}. {{ todo.name }}</span>
+    </li>
+  </ul>
+</div>
