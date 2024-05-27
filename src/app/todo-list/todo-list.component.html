@@ -8,6 +8,20 @@
   Add Task
 </button>
 
+<div
+  class="alert alert-warning alert-dismissible fade show mt-2"
+  role="alert"
+  *ngIf="errorMessage"
+>
+  {{ errorMessage }}
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+    (click)="clearErrorMessage()"
+  ></button>
+</div>
 <div class="mt-5">
   <h4>Tasks:</h4>
   <ul class="list-group todos-list" *ngIf="todos.length > 0">
@@ -18,7 +32,13 @@
         [checked]="todo.isComplete"
         (change)="changeTodoStatus(todo)"
       />
-      <span class="todo-item">{{ i + 1 }}. {{ todo.name }}</span>
+      <span
+        class="todo-item"
+        [ngStyle]="{
+          'text-decoration': todo.isComplete ? 'line-through' : 'initial'
+        }"
+        >{{ i + 1 }}. {{ todo.name }}</span
+      >
     </li>
   </ul>
   <h5 *ngIf="todos.length === 0">No tasks</h5>
