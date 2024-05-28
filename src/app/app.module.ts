@@ -6,9 +6,13 @@ import { AppComponent } from "./app.component";
 import { TodoListComponent } from "./todo-list/todo-list.component";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from './footer/footer.component';
+import { AlertComponent } from './shared/components/alert/alert.component';
+import { AddTodoFormComponent } from './todo-list/add-todo-form/add-todo-form.component';
+import { TodoComponent } from './todo-list/todo/todo.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, HeaderComponent, FooterComponent],
+  declarations: [AppComponent, TodoListComponent, HeaderComponent, FooterComponent, AlertComponent, AddTodoFormComponent, TodoComponent, ModalComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

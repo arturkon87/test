@@ -11,12 +11,12 @@ export class TodoListComponent {
   clearErrorMessage() {
     this.errorMessage = "";
   }
-  changeTodoStatus(todo: Todo) {
-    todo.isComplete = !todo.isComplete;
-    console.log(this.todos);
-  }
+
   todos: Todo[] = [];
   errorMessage = "";
+
+  testSwitchCase = "yes";
+
   addTodo(todo: string): void {
     if (todo.length <= 3) {
       this.errorMessage = "The task must be at least 4 characters long";
@@ -24,5 +24,9 @@ export class TodoListComponent {
     }
     this.todos.push({ name: todo, isComplete: false });
     console.log("Actual list todo: ", this.todos);
+  }
+
+  deleteTodo(i: number) {
+    this.todos = this.todos.filter((todo: Todo, index: number) => index !== i);
   }
 }
