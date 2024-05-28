@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from "@angular/core";
 import { Todo } from "../../shared/interfaces/todo.interface";
 
 @Component({
@@ -12,6 +12,9 @@ export class TodoComponent {
   @Output() delete = new EventEmitter<void>();
   openModal = false;
 
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   console.log("changes", changes);
+  // }
   deleteTodo() {
     this.delete.emit();
   }
